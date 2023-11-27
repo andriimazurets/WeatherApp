@@ -25,15 +25,15 @@ class HourlyAdapters(var items: List<Hourly>) : RecyclerView.Adapter<HourlyAdapt
         holder.binding.apply {
             hourTxt.text = items[position].hour
             tempTxt.text = "${items[position].temp}°"
-
-            var drawableResourceId = holder.itemView.resources
-                .getIdentifier(
-                    items[position].picPath,
-                    "drawable",
-                    holder.itemView.context.packageName
-                )
-
-            Glide.with(context)
         }
+        val drawableResourceId = holder.itemView.resources
+            .getIdentifier(
+                items[position].picPath,
+                "drawable",
+                holder.itemView.context.packageName
+            )
+        Glide.with(holder.itemView.context)
+            .load(drawableResourceId)
+            .into(holder.binding.pic)
     }
 }
