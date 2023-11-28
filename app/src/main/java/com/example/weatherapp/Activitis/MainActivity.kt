@@ -14,7 +14,15 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater).also { setContentView(it.root) }
 
-        var hourlyList = mutableListOf<Hourly>(
+        binding.btnNextWeek.setOnClickListener {
+
+        }
+
+        recyclerViewInit()
+    }
+
+    private fun recyclerViewInit() {
+        val hourlyList = mutableListOf(
             Hourly("11 pm", "28", "cloudy"),
             Hourly("12 pm", "29", "sunny"),
             Hourly("13 pm", "30", "wind"),
@@ -25,6 +33,5 @@ class MainActivity : AppCompatActivity() {
         val adapter = HourlyAdapters(hourlyList)
         binding.viewRecycler.adapter = adapter
         binding.viewRecycler.layoutManager = LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false)
-
     }
 }

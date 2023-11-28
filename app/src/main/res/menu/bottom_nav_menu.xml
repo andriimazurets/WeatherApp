@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/miToday"
+        android:title="Today"
+        android:icon="@drawable/ic_today"
+        />
+
+    <item
+        android:id="@+id/miWeek"
+        android:title="Week"
+        android:icon="@drawable/ic_week_icon"
+        />
+
+    <item
+        android:id="@+id/miSettings"
+        android:title="Settings"
+        android:icon="@drawable/ic_settings"
+        />
+</menu>
